@@ -1,0 +1,14 @@
+
+
+body{background-color:powderblue;}
+
+h1{font-family: Arial;font-size: 150%;text-align: center;}
+
+a{text-decoration: none;}
+
+a:hover{color: red;}
+
+.div1{position: fixed; top:60%; content:url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Fukushima_I_by_Digital_Globe.jpg/360px-Fukushima_I_by_Digital_Globe.jpg);
+     right:30%; height: 200px; width: 200px;text-align: center;}
+
+.div1:hover{content:url(https://media.tenor.com/9sPQlkbGzDQAAAAM/sad-emote.gif);}

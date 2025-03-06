@@ -1,0 +1,19 @@
+
+td {width: 130px; height: 40px; text-align: center;}
+
+table { border-collapse: collapse;}
+
+tr,td, th { border-bottom: 1px black solid;
+    border-right: 1px black solid; border-left: 1px black solid; border-top:1px black solid}
+
+tr:last-child, td.row6, th.row6 { border-bottom: none; border-right: none; border-left: none;}
+
+.VET {border-left: 1px black solid; background-color: aqua;}
+
+.FT {background-color: teal;}
+.PVE {background-color: red;}
+.PVH {background-color: yellow;}
+.PVM {background-color: green;}
+.C {background-color: blue;}
+.PVP {background-color: purple;}
+.N {background-color: black;}
