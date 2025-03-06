@@ -1,0 +1,4 @@
+.main{width: 200px;height: 200px;border: 2px red solid;}
+
+#inner1{width: 100px; height: 100px; border: 2px gold solid; position: relative;}
+#inner2{width:100px; height: 100px; border: 2px green solid; position: fixed;}
