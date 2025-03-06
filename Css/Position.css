@@ -1,6 +1,6 @@
 .main{width: 200px;height: 200px;border: 2px red solid;}
 
-#inner1{width: 100px; height: 100px; border: 2px gold solid; position: relative;}
-#inner2{width:100px; height: 100px; border: 2px green solid; position: fixed;}
-#inner3{width:100px; height: 100px; border: 2px blue solid; position: absolute;}
-#inner4{width:100px; height: 100px; border: 2px purple solid; position: sticky;}
+#inner1{width: 100px; height: 100px; border: 2px gold solid; position: relative; left: 1150px;}
+#inner2{width:100px; height: 100px; border: 2px green solid; position: fixed; left: 1160px;}
+#inner3{width:100px; height: 100px; border: 2px blue solid; position: absolute;left:1160px;}
+#inner4{width:100px; height: 100px; border: 2px purple solid; position: sticky;left:1160px;}
