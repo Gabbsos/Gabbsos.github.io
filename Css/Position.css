@@ -2,3 +2,5 @@
 
 #inner1{width: 100px; height: 100px; border: 2px gold solid; position: relative;}
 #inner2{width:100px; height: 100px; border: 2px green solid; position: fixed;}
+#inner3{width:100px; height: 100px; border: 2px blue solid; position: absolute;}
+#inner4{width:100px; height: 100px; border: 2px purple solid; position: sticky;}
