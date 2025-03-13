@@ -6,18 +6,21 @@ ul.vertical {
     width: 100px;
     background-color: #0b6b00;
     border:1px solid black;
+    border-top: none;
 
   }
 
-li.vertical a{display:block;
+li.vertical a{
+    display:block;
     padding:10px 16px;
     text-decoration: none; 
-    color: black;
+    color: white;
     text-align: center; 
 }
 
 li.vertical{
     border-bottom: 1px solid black;
+    border-top: none;
 }
 
 li.vertical:last-child{
@@ -29,25 +32,33 @@ ul.horizontal{
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 100px;
-    background-color: #0b6b00;
-    border:1px solid black;
+    overflow: hidden;
 }
 
 li.horizontal a{
-    display:block;
     padding:10px 16px;
     text-decoration: none; 
-    color: black;
+    color: white;
     text-align: center;
+    display: block;
+    width:68px;
+    background-color: #0b6b00;
 }
 
 li.horizontal{
     float:left;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 li a:hover{background-color: rgb(28, 139, 0);}
 
 li a:active{
     background-color: #24c912;
+    color: black;
+}
+
+li.horizontal:last-child{
+    border-right: 1px solid black;
 }
