@@ -1,10 +1,9 @@
 
 
-body{background-color:rgb(255, 191, 0); font:'Gill Sans';}
+#hi{background-color:rgb(255, 191, 0); font:'Gill Sans'; margin-left: 20%; margin-right: 20%;}
 
 h1{font-size: 150%;text-align: center; background-color: rgb(19, 123, 59);}
 
-body{color:rgb(19, 39, 166)}
 
 hr{color: white;}
 
@@ -14,7 +13,7 @@ mark{background-color: rgb(19, 123, 59);}
 
 a:hover{color: red;}
 
-.div1{position: absolute; top:70%; content:url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Flag_of_China_%281889%E2%80%931912%29.svg/383px-Flag_of_China_%281889%E2%80%931912%29.svg.png);
-     right:30%; height: 200px; width: 200px;text-align: center;}
+.div1{position: absolute; top:80%; content:url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Flag_of_China_%281889%E2%80%931912%29.svg/383px-Flag_of_China_%281889%E2%80%931912%29.svg.png);
+     right:20%; height: 200px; width: 200px;text-align: center;}
 
 .div1:hover{content:url(https://i.redd.it/mxlen27r9zcd1.jpeg);}
