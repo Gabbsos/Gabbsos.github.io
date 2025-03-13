@@ -1,11 +1,11 @@
 
 
-#hi{background-color:rgb(255, 191, 0); font:'Gill Sans'; margin-left: 20%; margin-right: 20%;}
+#hi{background-color:rgb(7, 53, 160); font:'Gill Sans'; margin-left: 20%; margin-right: 20%; color: red;}
 
-h1{font-size: 150%;text-align: center; background-color: rgb(19, 123, 59);}
+#bob{font-size: 150%;text-align: center; background-color: rgb(19, 123, 59);}
 
 
-hr{color: white;}
+.h{color: white;}
 
 a{text-decoration: none; color: rgb(19, 39, 166);}
 
@@ -17,3 +17,22 @@ a:hover{color: red;}
      right:20%; height: 200px; width: 200px;text-align: center;}
 
 .div1:hover{content:url(https://i.redd.it/mxlen27r9zcd1.jpeg);}
+
+
+
+.im{height: 250px; width: 250px; display: block; margin-left: auto; margin-right: auto;}
+
+
+table{border-collapse: collapse; margin-left: auto; margin-right: auto;}
+
+
+
+#i1{border:1px solid black; padding: 10px; border-left: none; border-bottom: none;}
+#i4{border:1px solid black; padding: 10px; border-right: none; border-bottom: none;}
+#i2{border:1px solid black; padding: 10px; border-bottom: none;}
+#i3{border:1px solid black; padding: 10px; border-bottom: none;}
+
+caption{border:1px solid black; padding: 10px; border-bottom: none; border-top: none; text-align: center; border-left: none; border-right:none}
+    
+td {width: 250px; height: 250px; text-align: center;}
+
