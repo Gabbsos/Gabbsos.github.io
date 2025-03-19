@@ -9,7 +9,8 @@ ul.vertical {
     border-top: none;
     height: 100%;
     position: fixed;
-    top:48px;
+    top:40px;
+    left: 0;
     
   }
 
@@ -31,11 +32,13 @@ li.vertical{
 
 ul.horizontal{
     list-style-type: none;
-    margin: 0;
     padding: 0;
     overflow: hidden;
     position: fixed;
     z-index: 1000;
+    margin:0;
+    top:0;
+    left: 0;
 }
 
 li.horizontal a{
@@ -67,11 +70,9 @@ li.horizontal:last-child{
 }
 
 div.h{
-    margin-left: 300px;
+    margin-left: 277px;
     height:1000px;
-
     background-color: aqua;
-    top:100px;
     position: static;
-
+    margin-top:40px;
     }
