@@ -1,0 +1,19 @@
+div {border: 1px solid black; width: 150px; height:100px; margin-bottom: 20px;}
+
+#rounded{border-radius: 20px;}
+
+#rotate{transform: rotate(135deg);}
+
+#scale{transform: scale(2,2);}
+
+#skewX{transform: skewX(15deg);}
+
+#skewY{transform: skewY(40deg);}
+
+#rotateX{transform: rotateX(90deg);}
+
+#rotateY{transform: rotateY(225deg);}
+
+#shadow{box-shadow: 10px 10px 5px grey;}
+
+#translate{translate: 200px 100px;}
