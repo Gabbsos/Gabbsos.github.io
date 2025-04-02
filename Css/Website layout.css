@@ -1,0 +1,124 @@
+ul.vertical {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width:10%;
+    height: 100%;
+    position: fixed;
+    top:90px;
+    left: 0;
+    overflow: scroll;
+  }
+
+li.vertical a{
+    display:block;
+    padding:10px 16px;
+    text-decoration: none; 
+    color: white;
+    text-align: center; 
+}
+
+li.vertical a:hover{background-color: rgb(88, 88, 88);}
+
+li.vertical{
+    background-color: rgb(148, 148, 148);
+    width:100%
+}
+
+
+
+ul.horizontal{
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+
+    margin:0;
+    top:50px;
+    left: 0;
+    width:100%;
+}
+
+li.horizontal a{
+    padding:10px 16px;
+    text-decoration: none; 
+    color: white;
+    text-align: center;
+    display: block;
+    background-color: #616161;
+}
+
+li.horizontal{
+    float:left;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width:19.938%
+}
+
+li.horizontal a:hover{background-color: rgb(116, 116, 116);}
+
+li.horizontal a:active{
+    background-color: #c2c2c2;
+    color: black;
+}
+
+li.horizontal:last-child{
+    border-right: 1px solid black;
+}
+
+div.h{
+    height:550px;
+    position: static;
+    width:75%;
+    display: inline-block;
+    background-color: aqua;
+    }
+
+header{
+    text-align: center;
+    background-color: rgb(175, 192, 193);
+    top:0px;
+    margin: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+}
+
+div.ha{
+    height:550px;
+    top:0px;
+    width: 25%;
+    position: static;
+    display: inline-block;
+    margin-left: 15px;
+    background-color: blanchedalmond;
+}
+
+footer{
+    text-align: center;
+}
+
+div.main{height: 550px;
+         margin-left: 10%;
+         margin-top:90px;
+         display:flex;
+         margin-right: 0;
+         width:90%;
+         background-color: brown;
+
+}
+
+div.footer{
+    width:100%;
+    background-color: rgb(58, 57, 57);
+    height:100px;
+    margin: 0;
+    bottom: 0;
+    position: relative;
+}
+
+
+
+

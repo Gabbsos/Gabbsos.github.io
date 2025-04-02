@@ -1,0 +1,160 @@
+
+body{margin:0;}
+
+.container {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr;
+    grid-template-rows: 75px 50px 500px 100px;
+    grid-template-areas: "header header header" "horizontalnav horizontalnav horizontalnav" 
+    "verticalnav maincontent secondcontent" "footer footer footer";
+    height: 100vh;
+    width: 100vw;
+    top:0;
+}
+.container > div:not(.header,.horizontalnav,.verticalnav){
+    background-color: white;
+    border: 1px solid black;
+}
+
+
+
+.fixed{
+  border: 1px solid black;
+}
+
+
+
+.container > div.header{
+  grid-area: header;
+  margin: 0;
+}
+.container > div.header > div.fixed{
+  background-color: white;
+  width: 100%;
+  height: 74px;
+  position:fixed;
+}
+div.header > div.fixed > p {  font-size: 20px;
+  text-align: center;}
+
+
+
+
+
+.container > div.horizontalnav{
+  grid-area: horizontalnav;
+}
+
+.container> div.horizontalnav > div.fixed{
+  background-color: rgb(55, 55, 59);
+  position: fixed;
+  width:100%;
+  height: 49px;
+
+}
+
+
+
+
+
+.container > div.verticalnav{
+  grid-area: verticalnav;
+}
+.container>div.verticalnav>div.fixed{
+  background-color: rgb(205, 205, 205);
+  position: fixed;
+  width: 181px;
+  height: 78.6%;
+}
+
+
+
+
+
+.container > div.maincontent{
+  grid-area: maincontent;
+  font-size: 15px;
+  padding: 10px;
+}
+
+
+
+
+.container > div.secondcontent{
+  grid-area: secondcontent;
+  padding: 10px;
+}
+
+
+
+
+.container > div.footer{
+  grid-area: footer;
+  z-index: 1000;
+  text-align: center;
+  padding: 40px;
+}
+
+
+
+
+
+
+ul.verticalmain {
+  position: fixed;
+  width: 181px;
+  height: 100%;
+  margin:0;
+  padding:0;
+}
+
+li.vertical{
+  list-style-type: none;
+  padding:0;
+  width: 100%;
+  height: 8%;
+}
+
+.vertical a {
+  text-decoration: none;
+  display: block;
+  border: 1px solid black;
+  height: 100%;
+  text-align: center;
+  color: black;
+}
+
+
+
+
+ul.horizontalmain{
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height:49px;
+}
+
+li.horizontal{
+  list-style-type: none;
+  width: 10%;
+  height: 100%;
+  float: left;
+}
+
+.horizontal a{
+  text-decoration: none;
+  border: 1px solid black;
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
