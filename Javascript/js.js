@@ -16,18 +16,35 @@ function colour()
 {
     let today = new Date();
     const map1 = new Map();
-    map1.set("day",31)
-    map1.set("month",12)
-    map1.set("year", today.getFullYear())
+
+    var day = document.getElementById("day").value;
+    var month = document.getElementById("month").value;
+    var year = document.getElementById("year").value;
+    
+    map1.set("day",day);
+    map1.set("month",month);
+    map1.set("year", year);
+
+    const limits = {
+        day:31,
+        month:12,
+        year:today.getFullYear()
+    };
     
     for (const [key, value] of map1){
-        (key > value || key < 0) ? document.getElementById(key).style.backgroundColor = "red" : key / value *255
+        if(!Number.isInteger(parseInt(value))){
+            document.getElementById("thediv").textContent = "The value must be an integer";
+        }else{
+            if(value > limits[key] ||value < 0){
+                document.getElementById(key).style.backgroundColor = "red";
+                value = 0;
+            }else{
+                value = (value/limits[key])*255
+                document.getElementById("thediv").style.backgroundColor = `rgb(${month},${year},${day})`
+            }
+        }
     }
+
     
-    var day = document.getElementById("day").value;
-    var month = document.getElementById("month").value / 12 * 255;
-    var year = document.getElementById("year").value % 255;
 
-
-    document.getElementById("thediv").style.backgroundColor = `rgb(${year},${day},${month})`;
 }
