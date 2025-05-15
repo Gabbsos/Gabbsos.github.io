@@ -7,12 +7,12 @@
     <title>random</title>
 </head>
 <body>
-    <script src="Javascript/randomnum.js"></script>
+    <script src="Javascript/randomnum.js" defer></script>
     <h1>Higher or lower</h1>
     <div>
-        <button type="button" id="num">Guess</button>
-        <button type="button" id="newval">Generate Random</button>
-        <p>hi</p>
+        <button onclick="guess()" type="button" id="num">Guess</button>
+        <button onclick="makenum()" type="button" id="newval">Generate Random</button>
+        <p id="text">hi</p>
     </div>
    
 </body>
