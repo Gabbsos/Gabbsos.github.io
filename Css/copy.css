@@ -1,0 +1,70 @@
+body{margin:0;}
+
+.Page{
+    width: 100vw;
+    height: 180vh;
+    display: grid;
+    grid-template-rows:13% 80% 7%;
+    grid-template-areas: "Header" "Main" "Footer";
+    
+}
+
+
+
+
+
+
+div.Header{
+    grid-area:Header;
+    background-color: rgb(9, 169, 33);
+    text-align: center;
+}
+
+div.Header h1{
+    color: white;
+}
+
+div.Header ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+div.Header li{
+    display: inline;
+    margin: 1%;
+}
+
+div.Header a{
+    color: white;
+    text-decoration: none;
+}
+
+div.Header a:hover{
+    text-decoration: none;
+
+}
+
+
+
+
+
+
+div.Main{
+    width: 40%;
+    grid-area:Main;
+    margin:0 auto;
+    background-color: bisque;
+}
+
+
+
+
+
+
+
+div.Footer{
+    grid-area:Footer;
+    background-color: rgb(36, 36, 46);
+    color: white;
+}
