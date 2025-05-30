@@ -2,7 +2,7 @@ body{margin:0;}
 
 .Page{
     width: 100vw;
-    height: 180vh;
+    height: 230vh;
     display: grid;
     grid-template-rows:13% 80% 7%;
     grid-template-areas: "Header" "Main" "Footer";
@@ -51,13 +51,33 @@ div.Header a:hover{
 
 
 div.Main{
-    width: 40%;
+    width: 70%;
     grid-area:Main;
     margin:0 auto;
     background-color: bisque;
 }
 
+div.Main > div{
+    background-color: aliceblue;
+}
 
+div.Main h2{text-align: center;}
+
+#about{
+    height: 20%;
+}
+
+#projects{
+    height: 28%;
+}
+
+#schedule{
+    height:34%;
+}
+
+#contact{
+    height:14%;
+}
 
 
 
