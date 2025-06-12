@@ -1,6 +1,11 @@
 
 
 const items = new Map();
+
+
+window.addEventListener("beforeunload", () => {
+    saveCookies();
+});
 //need to update key after deletion
 
 function addItem(){
@@ -34,5 +39,21 @@ function display(){
     items.forEach((value,key) => {
         list += `${key}: ${value}\n`;
     });
-    alert(list)
+    alert(list);
 }
+
+
+function saveCookies(){ 
+    let theList = "";
+    items.forEach((value) => {
+       theList += (value + ";");
+    });
+    document.cookie = "ToDoList=" + theList;
+}
+
+
+function getCookie(){
+    let myCookies = document.cookie.split(";");
+    console.log(myCookies);
+}
+
