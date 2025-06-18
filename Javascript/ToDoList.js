@@ -1,44 +1,34 @@
 
-
-const items = new Map();
+var items = getCookie();
 
 
 window.addEventListener("beforeunload", () => {
     saveCookies();
 });
-//need to update key after deletion
+
 
 function addItem(){
     let add = prompt("What would you like to add?");
-    
-    items.set((items.size + 1),add);
+    items.push(add);
 }
 
 
 function remItem(){
-    if (items.size == 0){
-        alert("There are no items to remove");
-        return;
-    }
-
-    let list = "Current Items:\n";
-    items.forEach((value,key) => {
-        list += `${key}: ${value}\n`;
-    });
-
-    let gone = prompt(`${list}Type the num of the item you want to remove`);
-
-    items.delete(parseInt(gone))
-
+    
 }
 
 
 function display(){
-    let list = "Current Items:\n";
-    items.forEach((value,key) => {
-        list += `${key}: ${value}\n`;
-    });
-    alert(list);
+    if(!items.length === 0){
+        for(let i=0;i<items.length;i++){
+            var child1 = document.createElement("div")
+            child1.id = "r"+ i;
+            child1.className = "display";
+            
+        }
+    }
+
+
 }
 
 
@@ -52,7 +42,14 @@ function saveCookies(){
 
 
 function getCookie(){
-    let myCookies = document.cookie.split(",");
-    console.log(myCookies);
+    let cookies = `${document.cookie}`;
+    let myCookies = cookies.split(",");
+    for (let i = 0; i<myCookies.length;i++){
+        if(myCookies[i].includes("ToDoList=")){
+            myCookies[i] = myCookies[i].replace("ToDoList=","");
+        }
+    }
+    myCookies = myCookies.filter(Boolean);
+    return myCookies;
 }
 
