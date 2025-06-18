@@ -30,7 +30,6 @@ function remItem(){
 
     items.delete(parseInt(gone))
 
-
 }
 
 
@@ -46,14 +45,14 @@ function display(){
 function saveCookies(){ 
     let theList = "";
     items.forEach((value) => {
-       theList += (value + ";");
+       theList += (value + ",");
     });
     document.cookie = "ToDoList=" + theList;
 }
 
 
 function getCookie(){
-    let myCookies = document.cookie.split(";");
+    let myCookies = document.cookie.split(",");
     console.log(myCookies);
 }
 
