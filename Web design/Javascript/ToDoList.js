@@ -21,9 +21,9 @@ function remItem(){
 function display(){
     if(!items.length === 0){
         for(let i=0;i<items.length;i++){
-            var child1 = document.createElement("div")
-            child1.id = "r"+ i;
-            child1.className = "display";
+        
+
+
             
         }
     }
