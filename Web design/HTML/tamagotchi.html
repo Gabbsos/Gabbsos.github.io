@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Web design/Css/Tamagotchi.css">
+    <title>My Tamagotchi Pet</title>
+        
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Add Pet Name Element -->
+        <input type="text" id="petName" placeholder="Your Pet Name">
+        <div class="tamagotchi-display">
+            <div id="tamagotchiEmoji" class="tamagotchi-emoji">🥚</div>
+            <div id="messageBox" class="message-box"></div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span>Hunger</span>
+                <div class="stat-bar-container">
+                    <div id="hungerBar" class="stat-bar"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <span>Happiness</span>
+                <div class="stat-bar-container">
+                    <div id="happinessBar" class="stat-bar"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <span>Sleep</span>
+                <div class="stat-bar-container">
+                    <div id="sleepBar" class="stat-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="feedButton" class="control-button">Feed 🍔</button>
+            <button id="playButton" class="control-button">Play ⚽</button>
+            <button id="sleepButton" class="control-button">Sleep 😴</button>
+        </div>
+    </div>
+
+    <!-- Game Over Overlay -->
+    <div id="gameOverOverlay" class="game-over-overlay">
+        <div class="game-over-content">
+            <h2>Game Over!</h2>
+            <p id="gameOverMessage">Your pet ran away because it was not cared for.</p>
+            <button id="resetButton" class="reset-button">Restart Game</button>
+        </div>
+    </div>
+
+    <script src="/Web design/Javascript/Tamagotchi.js"></script>
+</body>
+</html>
