@@ -28,9 +28,9 @@ const petName = document.getElementById('petName')
 let gameInterval;
 let messageTimeout;
 /* Add variables here */
-let happiness = 5;
-let hungriness = 8;
-let sleepiness = 3;
+let happinessDecay = 5;
+let hungrinessDecay = 8;
+let sleepinessDecay = 3;
 let gameSpeed = 3;
 // Function to clamp a value between a min and max
 function clamp(value, min, max) {
@@ -165,9 +165,9 @@ function gameLoop() {
 
     // Only decrease stats if not sleeping
     if (!tamagotchi.isSleeping) {
-        tamagotchi.happiness = clamp(tamagotchi.happiness - happiness, 0, 100);
-        tamagotchi.hunger = clamp(tamagotchi.hunger - hungriness, 0, 100);
-        tamagotchi.sleep = clamp(tamagotchi.sleep - sleepiness, 0, 100);
+        tamagotchi.happiness = clamp(tamagotchi.happiness - happinessDecay, 0, 100);
+        tamagotchi.hunger = clamp(tamagotchi.hunger - hungrinessDecay, 0, 100);
+        tamagotchi.sleep = clamp(tamagotchi.sleep - sleepinessDecay, 0, 100);
     }
     tamagotchi.age++; // Pet ages with each cycle
 
@@ -234,7 +234,21 @@ function saveCookies(){
 
 /* Cookie Get Function */
 function getCookies(){
-
+    const cookies = document.cookie.split('; ').reduce((acc,curr) => {
+        const [key,value] = curr.split('=');
+        acc[key] = decodeURIComponent(value);
+        return acc;
+    },{});
+    if (cookies.tamagotchi) {
+        const savedData = JSON.parse(cookies.tamagotchi);
+        console.log(savedData);
+        tamagotchi = {
+            ...savedData,
+            isAlive:true,
+            isSleeping:false,
+            deathReason:''
+        };
+    }
 }
 
 
@@ -245,6 +259,11 @@ sleepButton.addEventListener('click',putToSleep)
 resetButton.addEventListener('click', resetGame)
 
 // Initial setup on window load
-window.onload = function() {
+window.addEventListener('load', () =>{
+    getCookies();
     resetGame(); // Initialize the game state and start the loop
-};
+});
+
+window.addEventListener('beforeunload', () =>{
+    saveCookies();
+});
