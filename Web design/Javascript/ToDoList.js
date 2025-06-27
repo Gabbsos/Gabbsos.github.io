@@ -2,9 +2,6 @@
 var items = getCookie();
 
 
-window.addEventListener("beforeunload", () => {
-    saveCookies();
-});
 
 
 function addItem(){

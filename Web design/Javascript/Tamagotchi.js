@@ -107,6 +107,7 @@ function feed() {
     showMessage("Yummy! 😋");
     updateStatsDisplay();
     updateTamagotchiEmoji();
+    saveCookies();
 }
 
 function play() {
@@ -123,6 +124,7 @@ function play() {
     showMessage("Whee! 😄");
     updateStatsDisplay();
     updateTamagotchiEmoji();
+    saveCookies();
 }
 
 function putToSleep() {
@@ -147,6 +149,7 @@ function putToSleep() {
         updateTamagotchiEmoji();
         disableButtons(false);
     }, 5000); // Simulates a longer sleep period
+    saveCookies();
 }
 
 // Function to disable/enable action buttons
@@ -174,6 +177,7 @@ function gameLoop() {
     updateStatsDisplay();
     updateTamagotchiEmoji();
     checkHealth();
+    saveCookies();
 }
 
 // Check if the Tamagotchi is still alive
@@ -259,11 +263,8 @@ sleepButton.addEventListener('click',putToSleep)
 resetButton.addEventListener('click', resetGame)
 
 // Initial setup on window load
-window.addEventListener('load', () =>{
+window.onload = function() {
     getCookies();
     resetGame(); // Initialize the game state and start the loop
-});
+};
 
-window.addEventListener('beforeunload', () =>{
-    saveCookies();
-});
