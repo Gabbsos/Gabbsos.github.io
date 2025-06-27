@@ -23,14 +23,15 @@ const gameOverOverlay = document.getElementById('gameOverOverlay');
 const gameOverMessage = document.getElementById('gameOverMessage');
 const resetButton = document.getElementById('resetButton');
 /* Save the pet name element as a const */
-const petName
+const petName = document.getElementById('petName')
 
 let gameInterval;
 let messageTimeout;
 /* Add variables here */
-
-
-
+let happiness = 5;
+let hungriness = 8;
+let sleepiness = 3;
+let gameSpeed = 3;
 // Function to clamp a value between a min and max
 function clamp(value, min, max) {
     return Math.max(min, Math.min(value, max));
@@ -224,19 +225,24 @@ function resetGame() {
 }
 
 /* Cookie Save Function */
-
+function saveCookies(){
+    const {isAlive,isSleeping,deathReason,...newData} = tamagotchi;
+    document.cookie = `tamagotchi=${encodeURIComponent(JSON.stringify(newData))}; max-age=86400`;
+}
 
 
 
 /* Cookie Get Function */
+function getCookies(){
 
-
+}
 
 
 /* Event Listeners */
-
-
-        
+feedButton.addEventListener('click',feed);
+playButton.addEventListener('click',play)
+sleepButton.addEventListener('click',putToSleep)
+resetButton.addEventListener('click', resetGame)
 
 // Initial setup on window load
 window.onload = function() {
