@@ -204,7 +204,7 @@ function checkHealth() {
 
 // Function to reset the game
 function resetGame() {
-    if(tamagotchi.age == 0)
+    if(tamagotchi.age == 0 || !tamagotchi.isAlive)
     {
         tamagotchi = {
             name: petName.value,
@@ -216,6 +216,7 @@ function resetGame() {
             age: 0,
             deathReason: ""
         };
+        showMessage("A new pet has hatched! 🥚");
     }
 
     gameOverOverlay.classList.remove('active');
@@ -225,13 +226,13 @@ function resetGame() {
     // Restart the game loop
     clearInterval(gameInterval); // Clear any old interval first
     gameInterval = setInterval(gameLoop, gameSpeed*1000); // Game cycle every 1.5 seconds
-    showMessage("A new pet has hatched! 🥚");
+
 }
 
 /* Cookie Save Function */
 function saveCookies(){
-    const {isAlive,isSleeping,deathReason,...newData} = tamagotchi;
-    document.cookie = `tamagotchi=${encodeURIComponent(JSON.stringify(newData))}; max-age=86400`;
+    const {isSleeping,...savedData} = tamagotchi;
+    document.cookie = `tamagotchi=${encodeURIComponent(JSON.stringify(savedData))}; max-age=86400`;
 }
 
 
@@ -245,12 +246,9 @@ function getCookies(){
     },{});
     if (cookies.tamagotchi) {
         const savedData = JSON.parse(cookies.tamagotchi);
-        console.log(savedData);
         tamagotchi = {
             ...savedData,
-            isAlive:true,
-            isSleeping:false,
-            deathReason:''
+            isSleeping:false
         };
     }
 }
@@ -263,8 +261,11 @@ sleepButton.addEventListener('click',putToSleep)
 resetButton.addEventListener('click', resetGame)
 
 // Initial setup on window load
-window.onload = function() {
+window.addEventListener('load', ()=>{
     getCookies();
-    resetGame(); // Initialize the game state and start the loop
-};
+    resetGame();
+});
 
+window.addEventListener('beforeunload', ()=>{
+    saveCookies();
+});
