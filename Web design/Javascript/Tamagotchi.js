@@ -6,6 +6,8 @@ let tamagotchi = {
     sleep: 100,
     isAlive: true,
     isSleeping: false,
+    sleepStartTime:null,
+    sleepDuration:5000,
     age: 0, // Age in game cycles
     deathReason: ""
     };
@@ -137,19 +139,24 @@ function putToSleep() {
         return;
     }
     tamagotchi.isSleeping = true;
+    tamagotchi.sleepStartTime = Date.now();
     tamagotchi.sleep = clamp(tamagotchi.sleep + 40, 0, 100); // Big sleep boost
     showMessage("Zzzzz... 😴");
     updateTamagotchiEmoji();
     disableButtons(true);
 
     // Wake up after a certain period (e.g., 5 seconds)
-    setTimeout(() => {
-        tamagotchi.isSleeping = false;
-        showMessage("Good morning! 😊");
-        updateTamagotchiEmoji();
-        disableButtons(false);
-    }, 5000); // Simulates a longer sleep period
+    setTimeout(wakeUp, tamagotchi.sleepDuration); // Simulates a longer sleep period
     saveCookies();
+}
+
+
+function wakeUp(){
+    tamagotchi.isSleeping = false;
+    tamagotchi.sleepStartTime = null;
+    showMessage("Good morning! 😊");
+    updateTamagotchiEmoji();
+    disableButtons(false);
 }
 
 // Function to disable/enable action buttons
@@ -231,8 +238,7 @@ function resetGame() {
 
 /* Cookie Save Function */
 function saveCookies(){
-    const {isSleeping,...savedData} = tamagotchi;
-    document.cookie = `tamagotchi=${encodeURIComponent(JSON.stringify(savedData))}; max-age=86400`;
+    document.cookie = `tamagotchi=${encodeURIComponent(JSON.stringify(tamagotchi))}; max-age=86400`;
 }
 
 
@@ -248,8 +254,23 @@ function getCookies(){
         const savedData = JSON.parse(cookies.tamagotchi);
         tamagotchi = {
             ...savedData,
-            isSleeping:false
         };
+        
+        if (tamagotchi.sleepStartTime && tamagotchi.isSleeping){
+            const elapsed = Date.now() - tamagotchi.sleepStartTime;
+            const remaining = tamagotchi.sleepDuration - elapsed;
+           
+           if(remaining > 0){
+                updateTamagotchiEmoji();
+                disableButtons(true);
+
+                setTimeout(wakeUp,remaining);
+            }else{
+                wakeUp()
+            }
+           
+        }
+
     }
 }
 
