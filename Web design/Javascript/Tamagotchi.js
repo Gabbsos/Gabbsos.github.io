@@ -144,7 +144,7 @@ function putToSleep() {
     showMessage("Zzzzz... 😴");
     updateTamagotchiEmoji();
     disableButtons(true);
-
+    console.log(tamagotchi.sleepDuration);
     // Wake up after a certain period (e.g., 5 seconds)
     setTimeout(wakeUp, tamagotchi.sleepDuration); // Simulates a longer sleep period
     saveCookies();
@@ -220,6 +220,8 @@ function resetGame() {
             sleep: 100,
             isAlive: true,
             isSleeping: false,
+            sleepStartTime:null,
+            sleepDuration:5000,
             age: 0,
             deathReason: ""
         };
